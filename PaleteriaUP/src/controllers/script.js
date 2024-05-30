@@ -1,13 +1,13 @@
 import Paleta from "../models/Paleta.js";
 import { bst } from "./dependencies.js";
 
-let btn = document.getElementById("add-btn");
-let btn2 = document.getElementById("search-btn");
-let btn3 = document.getElementById("min-btn");
-let btn4 = document.getElementById("max-btn");
-let btn5 = document.getElementById("impresion-btn");
+let agregar = document.getElementById("add-btn");
+let buscar = document.getElementById("search-btn");
+let minimo = document.getElementById("min-btn");
+let maximo = document.getElementById("max-btn");
+let imprimir = document.getElementById("impresion-btn");
 
-btn.addEventListener("click", () => {
+agregar.addEventListener("click", () => {
     let addPaleta = document.getElementById("add").value;
     let paleta = new Paleta(addPaleta);
     let data = bst.add(paleta);
@@ -19,7 +19,7 @@ btn.addEventListener("click", () => {
     }
 });
 
-btn2.addEventListener("click", () => {
+buscar.addEventListener("click", () => {
     let searchPaleta = document.getElementById("search").value;
     if (bst.search(searchPaleta)) {
         Swal.fire("La paleta se encuentra en la lista");
@@ -28,7 +28,7 @@ btn2.addEventListener("click", () => {
     }
 });
 
-btn3.addEventListener("click", () => {
+minimo.addEventListener("click", () => {
     let data = bst.min();
     if (data) {
         Swal.fire(`La paleta con menor letra es:  ${data.add}`);
@@ -37,7 +37,7 @@ btn3.addEventListener("click", () => {
     }
 });
 
-btn4.addEventListener("click", () => {
+maximo.addEventListener("click", () => {
     let data = bst.max();
     if (data) {
         Swal.fire(`La paleta con mayor letra es: ${data.add}`);
@@ -46,10 +46,10 @@ btn4.addEventListener("click", () => {
     }
 });
 
-btn5.addEventListener("click", () => {
+imprimir.addEventListener("click", () => {
     let players = document.getElementById("div");
     players.innerHTML = "";
-         bst.impresion((data) => {
+         bst.imprimir((data) => {
         let playerItem = document.createElement("div");
         playerItem.textContent = `${data.add}`;
         players.appendChild(playerItem);

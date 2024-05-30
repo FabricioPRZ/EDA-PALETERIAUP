@@ -81,7 +81,7 @@ class BST {
     }
     
 
-    impresion(callback) {
+    imprimir(callback) {
         this.inOrderTraversal(this.root, callback);
     }
 
