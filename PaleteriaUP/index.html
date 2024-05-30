@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paletería UP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+    <div class="contenedor-img">
+        <div class="container">
+            <div class="inputs">
+                <div class="row">
+                    <input type="text" placeholder="Agregar" required id="add">
+                    <button id="add-btn">Agregar</button>
+                </div>
+                <div class="row">
+                    <input type="text" placeholder="Búscar" required id="search">
+                    <button id="search-btn">Búscar</button>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button id="min-btn">Mínimo</button>
+                <button id="max-btn">Máximo</button>
+                <button id="impresion-btn">Imprimir todas las paletas</button>
+            </div>
+            <div class="paletas">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Paletas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="div"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>    
+    <script type="module" src="./src/controllers/script.js"></script>
+</body>
+</html>
