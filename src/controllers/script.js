@@ -31,7 +31,7 @@ buscar.addEventListener("click", () => {
 minimo.addEventListener("click", () => {
     let data = bst.min();
     if (data) {
-        Swal.fire(`La paleta con menor letra es:  ${data.add}`);
+        Swal.fire(`La paleta con menor letra es: ${data.sabor}`);
     } else {
         Swal.fire("No hay paletas en la lista");
     }
@@ -40,7 +40,7 @@ minimo.addEventListener("click", () => {
 maximo.addEventListener("click", () => {
     let data = bst.max();
     if (data) {
-        Swal.fire(`La paleta con mayor letra es: ${data.add}`);
+        Swal.fire(`La paleta con mayor letra es: ${data.sabor}`);
     } else {
         Swal.fire("No hay paletas en la lista");
     }
@@ -49,9 +49,9 @@ maximo.addEventListener("click", () => {
 imprimir.addEventListener("click", () => {
     let paletas = document.getElementById("div");
     paletas.innerHTML = "";
-         bst.imprimir((data) => {
+    bst.imprimir((data) => {
         let paletasItem = document.createElement("div");
-        paletasItem.textContent = `${data.add}`;
+        paletasItem.textContent = `${data.sabor}`;
         paletas.appendChild(paletasItem);
     });
-})
+});

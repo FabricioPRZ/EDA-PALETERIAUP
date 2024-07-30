@@ -41,9 +41,9 @@ class BST {
     }
 
     searchNode(node, sabor) {
-        if (node === null || node.value.add === sabor) {
+        if (node === null || node.value.sabor === sabor) {
             return node;
-        } else if (sabor < node.value.add) {
+        } else if (sabor < node.value.sabor) {
             return this.searchNode(node.left, sabor);
         } else {
             return this.searchNode(node.right, sabor);
@@ -80,7 +80,6 @@ class BST {
         }
     }
     
-
     imprimir(callback) {
         this.inOrderTraversal(this.root, callback);
     }
@@ -90,8 +89,6 @@ class BST {
             this.inOrderTraversal(node.left, callback);
             callback(node.value);
             this.inOrderTraversal(node.right, callback);
-        }else{
-            return
         }
     }
 }
