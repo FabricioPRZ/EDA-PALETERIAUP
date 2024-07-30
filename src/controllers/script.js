@@ -25,7 +25,7 @@ agregar.addEventListener("click", () => {
 buscar.addEventListener("click", () => {
     let searchSabor = document.getElementById("search").value;
     if (bst.search(searchSabor)) {
-        Swal.fire("La paleta se encuentra en la lista");
+        Swal.fire(`La paleta ${searchSabor}  se encuentra en la lista`);
     } else {
         Swal.fire("La paleta no se encuentra en la lista");
     }
