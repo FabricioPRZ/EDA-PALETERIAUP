@@ -15,11 +15,11 @@ class BST {
     }
     
     insertNode(node, value) {
-        if (value.add === node.value.add) {
+        if (value.sabor === node.value.sabor) {
             return false;
         }
     
-        if (value.add < node.value.add) {
+        if (value.sabor < node.value.sabor) {
             if (node.left === null) {
                 node.left = new Node(value);
                 return node.left !== null;
@@ -36,17 +36,17 @@ class BST {
         }
     }
 
-    search(add) {
-        return this.searchNode(this.root, add);
+    search(sabor) {
+        return this.searchNode(this.root, sabor);
     }
 
-    searchNode(node, add) {
-        if (node === null || node.value.add === add) {
+    searchNode(node, sabor) {
+        if (node === null || node.value.add === sabor) {
             return node;
-        } else if (add < node.value.add) {
-            return this.searchNode(node.left, add);
+        } else if (sabor < node.value.add) {
+            return this.searchNode(node.left, sabor);
         } else {
-            return this.searchNode(node.right, add);
+            return this.searchNode(node.right, sabor);
         }
     }
 

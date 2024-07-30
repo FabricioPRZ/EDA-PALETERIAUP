@@ -1,8 +1,9 @@
 class Paleta{
-    add
 
-    constructor(add){
-        this.add = add
+    sabor
+
+    constructor(sabor){
+        this.sabor = sabor
     }
 }
 export default Paleta

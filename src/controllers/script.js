@@ -47,11 +47,11 @@ maximo.addEventListener("click", () => {
 });
 
 imprimir.addEventListener("click", () => {
-    let players = document.getElementById("div");
-    players.innerHTML = "";
+    let paletas = document.getElementById("div");
+    paletas.innerHTML = "";
          bst.imprimir((data) => {
-        let playerItem = document.createElement("div");
-        playerItem.textContent = `${data.add}`;
-        players.appendChild(playerItem);
+        let paletasItem = document.createElement("div");
+        paletasItem.textContent = `${data.add}`;
+        paletas.appendChild(paletasItem);
     });
 })
