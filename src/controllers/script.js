@@ -8,8 +8,11 @@ let maximo = document.getElementById("max-btn");
 let imprimir = document.getElementById("impresion-btn");
 
 agregar.addEventListener("click", () => {
-    let addPaleta = document.getElementById("add").value;
-    let paleta = new Paleta(addPaleta);
+    let sabor = document.getElementById("sabor").value;
+    let precio = parseFloat(document.getElementById("precio").value);
+    let tamaño = document.getElementById("tamaño").value;
+    
+    let paleta = new Paleta(sabor, precio, tamaño);
     let data = bst.add(paleta);
     console.log(data);
     if (data) {
@@ -20,8 +23,8 @@ agregar.addEventListener("click", () => {
 });
 
 buscar.addEventListener("click", () => {
-    let searchPaleta = document.getElementById("search").value;
-    if (bst.search(searchPaleta)) {
+    let searchSabor = document.getElementById("search").value;
+    if (bst.search(searchSabor)) {
         Swal.fire("La paleta se encuentra en la lista");
     } else {
         Swal.fire("La paleta no se encuentra en la lista");
@@ -51,7 +54,7 @@ imprimir.addEventListener("click", () => {
     paletas.innerHTML = "";
     bst.imprimir((data) => {
         let paletasItem = document.createElement("div");
-        paletasItem.textContent = `${data.sabor}`;
+        paletasItem.textContent = `Sabor: ${data.sabor}, Precio: ${data.precio}, Tamaño: ${data.tamaño}`;
         paletas.appendChild(paletasItem);
     });
 });

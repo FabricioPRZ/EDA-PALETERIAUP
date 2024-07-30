@@ -1,9 +1,9 @@
-class Paleta{
-
-    sabor
-
-    constructor(sabor){
-        this.sabor = sabor
+class Paleta {
+    constructor(sabor, precio, tamaño) {
+        this.sabor = sabor;
+        this.precio = precio;
+        this.tamaño = tamaño;
     }
 }
-export default Paleta
+
+export default Paleta;
